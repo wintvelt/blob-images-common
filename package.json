@@ -1,0 +1,28 @@
+{
+  "name": "blob-common",
+  "version": "1.0.2",
+  "description": "Helper functions for blob-images API, useful in stack with serverless and AWS",
+  "main": "core.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wintvelt/blob-images-common.git"
+  },
+  "keywords": [
+    "blob",
+    "aws",
+    "serverless"
+  ],
+  "author": "wintvelt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wintvelt/blob-images-common/issues"
+  },
+  "homepage": "https://github.com/wintvelt/blob-images-common#readme",
+  "dependencies": {
+    "aws-sdk": "^2.756.0",
+    "nanoid": "^3.1.12"
+  }
+}
