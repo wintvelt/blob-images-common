@@ -3,6 +3,19 @@ useful in a setup with
 - serverless stack
 - AWS
 
+### Usage
+All functions can be imported from their respective modules (results in lowest packages size), e.g.:
+```javascript
+import { sleep } from 'blob-common/core/sleep';
+import { btoa } from 'blob-common/core/base64';
+```
+
+All functions can be imported directly from the core, e.g.:
+```javascript
+import { sleep, btoa } from 'blob-common';
+```
+
+NB: the `sanitize` function is **not** included in the core, due to the relatively large size of imported package.
 
 ### Generic functions
 | Module        |Function                | Description
@@ -45,18 +58,3 @@ Some caveats on the specific dynamoDB functions:
 
 Caveats:
 - uses s3 bucket specified in `process.env.photoBucket`
-
-### Usage
-All functions can be imported from their respective modules (results in lowest packages size), e.g.:
-```javascript
-import { sleep } from 'blob-common/core/sleep';
-import { btoa } from 'blob-common/core/base64';
-```
-
-All functions can be imported directly from the core, e.g.:
-```javascript
-import { sleep, btoa } from 'blob-common';
-```
-
-NB: the `sanitize` function is **not** included in the core, due to the relatively large size of imported package.
-
