@@ -13,6 +13,15 @@ import {
     otob as otobM,
     btoa as btoaM,
 } from './core/base64';
+import {
+    dynamoDb as dynamoDbM,
+    dbUpdate as dbUpdateM,
+    dbUpdateMulti as dbUpdateMultiM
+} from './core/db';
+import {
+    handler as handlerM,
+    getUserFromEvent as getUserFromEventM,
+} from './core/handler';
 
 export const sleep = sleepModule;
 export const newPhotoId = newPhotoIdModule;
@@ -23,3 +32,9 @@ export const expireDate = expireDateM;
 export const otob = otobM;
 export const btoa = btoaM;
 export const RND = RNDM;
+export const handler = handlerM;
+export const getUserFromEvent = getUserFromEventM;
+
+export const dynamoDb = dynamoDbM;
+export const dbUpdate = dbUpdateM;
+export const dbUpdateMulti = dbUpdateMultiM;
