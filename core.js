@@ -19,9 +19,22 @@ import {
     dbUpdateMulti as dbUpdateMultiM
 } from './core/db';
 import {
+    cleanRecord as cleanRecordM,
+} from './core/dbClean';
+import {
+    dbItem as dbItemM,
+    dbCreateItem as dbCreateItemM
+} from './core/dbCreate';
+import {
     handler as handlerM,
     getUserFromEvent as getUserFromEventM,
 } from './core/handler';
+import {
+    s3 as s3M,
+} from './core/s3';
+import {
+    ses as sesM,
+} from './core/ses';
 
 export const sleep = sleepModule;
 export const newPhotoId = newPhotoIdModule;
@@ -38,3 +51,9 @@ export const getUserFromEvent = getUserFromEventM;
 export const dynamoDb = dynamoDbM;
 export const dbUpdate = dbUpdateM;
 export const dbUpdateMulti = dbUpdateMultiM;
+export const cleanRecord = cleanRecordM;
+export const dbItem = dbItemM;
+export const dbCreateItem = dbCreateItemM;
+
+export const s3 = s3M;
+export const ses = sesM;
