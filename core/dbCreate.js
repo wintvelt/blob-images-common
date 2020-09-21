@@ -21,7 +21,7 @@ export const dbItem = (item) => {
         }
         case 'GP': {
             expItem.datePK = item.PK;
-            expItem.dateSK = createdAt;
+            expItem.dateSK = createdAt + '#' + expItem.SK;
             break;
         }
 
