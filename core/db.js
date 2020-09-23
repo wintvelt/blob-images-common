@@ -6,7 +6,7 @@ const client = new AWS.DynamoDB.DocumentClient();
 
 const MAX_TRANSACTWRITE = 10;
 const withTable = (params) => ({
-    TableName: `${process.env.photoTable}${(inTestEnv) ? '-dev' : ''}`,
+    TableName: process.env.photoTable || process.env.devTable || 'blob-images-photos-dev',
     ...params
 });
 
