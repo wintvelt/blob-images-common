@@ -1,9 +1,14 @@
 import AWS from "aws-sdk";
 
-if (process.env.NODE_ENV === 'test') AWS.config.update({ region: 'eu-central-1' });
+const inTestEnv = (process.env.NODE_ENV === 'test');
+if (inTestEnv) AWS.config.update({ region: 'eu-central-1' });
 const client = new AWS.DynamoDB.DocumentClient();
 
 const MAX_TRANSACTWRITE = 10;
+const withTable = (params) => ({
+    TableName: `${process.env.photoTable}${(inTestEnv) ? '-dev' : ''}`,
+    ...params
+});
 
 const splitArr = (arr, size) => {
     let inArr = [...arr];
@@ -29,16 +34,15 @@ const splitTransact = (params) => {
 };
 
 export const dynamoDb = {
-    get: (params) => client.get(params).promise(),
-    put: (params) => client.put(params).promise(),
-    query: (params) => client.query(params).promise(),
-    update: (params) => client.update(params).promise(),
-    delete: (params) => client.delete(params).promise(),
-    transact: (params) => splitTransact(params),
+    get: (params) => client.get(withTable(params)).promise(),
+    put: (params) => client.put(withTable(params)).promise(),
+    query: (params) => client.query(withTable(params)).promise(),
+    update: (params) => client.update(withTable(params)).promise(),
+    delete: (params) => client.delete(withTable(params)).promise(),
+    transact: (params) => splitTransact(withTable(params)),
 };
 
 export const dbUpdate = (PK, SK, key, newValue) => (dynamoDb.update({
-    TableName: process.env.photoTable,
     Key: {
         PK,
         SK,
@@ -66,7 +70,6 @@ export const dbUpdateMulti = (PK, SK, newKV) => {
         ExpressionAttributeValues[`:k${i}`] = newKV[key];
     };
     return dynamoDb.update({
-        TableName: process.env.photoTable,
         Key: {
             PK,
             SK,

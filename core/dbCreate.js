@@ -33,7 +33,6 @@ export const dbItem = (item) => {
 
 const dbCreate = (Item) => {
     return dynamoDb.put({
-        TableName: process.env.photoTable,
         Item
     });
 };
