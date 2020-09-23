@@ -10,6 +10,13 @@ const withTable = (params) => ({
     ...params
 });
 
+const addTable = (transactItem) => {
+    const firstKey = Object.keys(transactItem)[0];
+    return {
+        [firstKey]: withTable(transactItem[firstKey])
+    };
+};
+
 const splitArr = (arr, size) => {
     let inArr = [...arr];
     let outArr = [];
@@ -26,7 +33,7 @@ const splitTransact = (params) => {
     return Promise.all(
         bundledTransactions.map(transactionSet => {
             const bundledParams = {
-                TransactItems: transactionSet
+                TransactItems: transactionSet.map(item => addTable(item))
             };
             return client.transactWrite(bundledParams).promise();
         })
