@@ -46,7 +46,7 @@ export const dynamoDb = {
     query: (params) => client.query(withTable(params)).promise(),
     update: (params) => client.update(withTable(params)).promise(),
     delete: (params) => client.delete(withTable(params)).promise(),
-    transact: (params) => splitTransact(withTable(params)),
+    transact: (params) => splitTransact(params),
 };
 
 export const dbUpdate = (PK, SK, key, newValue) => (dynamoDb.update({
