@@ -1,5 +1,5 @@
-import {dynamoDb} from "./db";
-import { now} from "./date";
+import { dynamoDb } from "./db";
+import { now } from "./date";
 import { RND } from "./RND";
 
 export const dbItem = (item) => {
@@ -12,7 +12,7 @@ export const dbItem = (item) => {
         RK,
     };
     // date key with id for PO (my photos) and GP (group photos per album), otherwise nothing
-    const recordType = item.PK.slice(0, 2);
+    const recordType = item.PK?.slice(0, 2);
     switch (recordType) {
         case 'PO': {
             expItem.datePK = 'PO' + item.SK;
