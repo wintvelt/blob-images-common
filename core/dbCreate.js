@@ -12,7 +12,7 @@ export const dbItem = (item) => {
         RK,
     };
     // date key with id for PO (my photos) and GP (group photos per album), otherwise nothing
-    const recordType = item.PK?.slice(0, 2);
+    const recordType = item.PK && item.PK.slice(0, 2);
     switch (recordType) {
         case 'PO': {
             expItem.datePK = 'PO' + item.SK;
