@@ -2,7 +2,9 @@ import AWS from "aws-sdk";
 
 var S3 = new AWS.S3({
     apiVersion: "2006-03-01",
-    params: { Bucket: process.env.photoBucket }
+    params: { 
+        Bucket: process.env.photoBucket || process.env.devBucket || 'blob-images-dev'
+    }
 });
 
 export const s3 = {
