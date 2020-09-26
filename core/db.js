@@ -88,14 +88,15 @@ export const dbUpdateMulti = (PK, SK, newKV) => {
         if (updateSet.length > 0) UpdateExpression += ' ';
         UpdateExpression += 'REMOVE ' + updateRemove.join(', ');
     };
-    return dynamoDb.update({
+    let updateParams = {
         Key: {
             PK,
             SK,
         },
         UpdateExpression,
         ExpressionAttributeNames,
-        ExpressionAttributeValues,
         ReturnValues: "ALL_NEW"
-    });
+    };
+    if (Object.keys(ExpressionAttributeValues).length > 0) updateParams.ExpressionAttributeValues = ExpressionAttributeValues;
+    return dynamoDb.update(updateParams);
 };
