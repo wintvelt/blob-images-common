@@ -66,15 +66,27 @@ export const dbUpdate = (PK, SK, key, newValue) => (dynamoDb.update({
 
 export const dbUpdateMulti = (PK, SK, newKV) => {
     const keys = Object.keys(newKV);
-    let UpdateExpression = "SET ";
+    let updateSet = [];
+    let updateRemove = [];
     let ExpressionAttributeNames = {};
     let ExpressionAttributeValues = {};
     for (let i = 0; i < keys.length; i++) {
         const key = keys[i];
-        if (i > 0) UpdateExpression += ', ';
-        UpdateExpression += `#k${i} = :k${i}`;
-        ExpressionAttributeNames[`#k${i}`] = key;
-        ExpressionAttributeValues[`:k${i}`] = newKV[key];
+        if (newKV[key]) {
+            // change value 
+            updateSet.push(`#k${i} = :k${i}`);
+            ExpressionAttributeNames[`#k${i}`] = key;
+            ExpressionAttributeValues[`:k${i}`] = newKV[key];
+        } else {
+            // empty value: remove item
+            updateRemove.push(`#k${i}`);
+            ExpressionAttributeNames[`#k${i}`] = key;
+        };
+    };
+    let UpdateExpression = (updateSet.length > 0) ? 'SET ' + updateSet.join(', ') : '';
+    if (updateRemove.length > 0) {
+        if (updateSet.length > 0) UpdateExpression += ' ';
+        UpdateExpression += 'REMOVE ' + updateRemove.join(', ');
     };
     return dynamoDb.update({
         Key: {
