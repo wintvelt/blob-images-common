@@ -57,4 +57,12 @@ Some caveats on the specific dynamoDB functions:
 | `/ses`        | `ses.send(params)`                    | sends an email from ses using params
 
 Caveats:
-- uses s3 bucket specified in `process.env.photoBucket`
+- uses s3 bucket specified in `process.env.photoBucket` or `process.env.devBucket`
+
+### Cognito functions
+| Module             |Function                       | Description
+|--------------------|-------------------------------|-------------------
+| `/cognito`         | `disableUser(userId)`         | disables a user in the cognito user pool
+
+Caveats:
+- uses cognito userpool id from `process.env.userPoolId` or `process.env.devUserPoolId`
