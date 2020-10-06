@@ -36,7 +36,7 @@ import {
     ses as sesM,
 } from './core/ses';
 import {
-    disableUser as disableUserM,
+    cognito as cognitoM,
 } from './core/cognito';
 
 export const sleep = sleepModule;
@@ -61,4 +61,4 @@ export const dbCreateItem = dbCreateItemM;
 export const s3 = s3M;
 export const ses = sesM;
 
-export const disableUser = disableUserM;
+export const cognito = cognitoM;

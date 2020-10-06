@@ -62,7 +62,8 @@ Caveats:
 ### Cognito functions
 | Module             |Function                       | Description
 |--------------------|-------------------------------|-------------------
-| `/cognito`         | `disableUser(userId)`         | disables a user in the cognito user pool
+| `/cognito`         | `cognito.disableUser(userId)` | disables a user in the cognito user pool
+| `/cognito`         | `cognito.deleteUser(userId)`  | deletes a user in the cognito user pool
 
 Caveats:
 - uses cognito userpool id from `process.env.userPoolId` or `process.env.devUserPoolId`
