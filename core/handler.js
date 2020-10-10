@@ -24,6 +24,9 @@ export const handler = (lambda) => {
 
 export const getUserFromEvent = (event) => {
     const authProvider = event.requestContext.identity.cognitoAuthenticationProvider;
+    // if unAuth visit return empty
+    if (!authProvider) return null;
+
     // Cognito authentication provider looks like:
     // cognito-idp.us-east-1.amazonaws.com/us-east-1_xxxxxxxxx,cognito-idp.us-east-1.amazonaws.com/us-east-1_aaaaaaaaa:CognitoSignIn:qqqqqqqq-1111-2222-3333-rrrrrrrrrrrr
     // Where us-east-1_aaaaaaaaa is the User Pool id
