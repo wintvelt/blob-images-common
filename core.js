@@ -38,6 +38,22 @@ import {
 import {
     cognito as cognitoM,
 } from './core/cognito';
+import {
+    makeEmailSrc as makeEmailSrcM,
+    emailBody as emailBodyM,
+    row as rowM,
+    textCell as textCellM,
+    paragraph as paragraphM,
+    greeting as greeteingM,
+    buttonCell as buttonEscapeM,
+    dividerCell as dividerCellM,
+    buttonCell as buttonCellM,
+    codeCell as codeCellM,
+    signatureCell as signatureCellM,
+    headerRow as headerRowM,
+    footerRow as footerRowM,
+    photoRow as photoRowM
+} from './core/email';
 
 export const sleep = sleepModule;
 export const newPhotoId = newPhotoIdModule;
@@ -62,3 +78,18 @@ export const s3 = s3M;
 export const ses = sesM;
 
 export const cognito = cognitoM;
+
+export const makeEmailSrc = makeEmailSrcM;
+export const emailBody = emailBodyM;
+export const row = rowM;
+export const textCell = textCellM;
+export const paragraph = paragraphM;
+export const greeting = greeteingM;
+export const buttonCell = buttonEscapeM;
+export const dividerCell = dividerCellM;
+export const buttonCell = buttonCellM;
+export const codeCell = codeCellM;
+export const signatureCell = signatureCellM;
+export const headerRow = headerRowM;
+export const footerRow = footerRowM;
+export const photoRow = photoRowM;

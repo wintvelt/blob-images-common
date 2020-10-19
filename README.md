@@ -54,10 +54,34 @@ Some caveats on the specific dynamoDB functions:
 | Module        |Function                               | Description
 |---------------|---------------------------------------|-------------------
 | `/s3`         | `s3.getMetadata(params)`              | returns a promise for an s3 function using the params. Also has a `delete` function
-| `/ses`        | `ses.send(params)`                    | sends an email from ses using params
+| `/ses`        | `ses.send(params)`                    | sends an email from ses using params - returns promise
+| `/ses`        | `ses.sendEmail(params)`               | sends an email from ses using `{toEmail, fromEmail, subject, data, textData}` - returns promise
 
 Caveats:
-- uses s3 bucket specified in `process.env.photoBucket` or `process.env.devBucket`
+- s3 function uses s3 bucket specified in `process.env.photoBucket` or `process.env.devBucket`
+
+
+### email helper functions
+| Module        |Function                               | Description
+|---------------|---------------------------------------|-------------------
+| `/email`      | `emailBody(rows)`               | returns email body with rows
+| `/email`      | `row(cells)`                    | generic row containing array of cells
+| `/email`      | `headerRow(logoSrc, frontendUrl)`| header row with logo, links to frontend
+| `/email`      | `footerRow`                     | 
+| `/email`      | `photoRow(photoSrc, linkUrl)`   | row containing (header) photo
+| `/email`      | `textCell(subtype)`             | cell containing `greeting`, `paragraph` or `buttonEscape` (small text with link)
+| `/email`      | `dividerCell(dividerSrc)`       | 
+| `/email`      | `buttonCell(text, link)`        | 
+| `/email`      | `codeCell(code)`                | big text block centered with code 
+| `/email`      | `signatureCell(src)`            | left aligned signature under email
+| `/email`      | `greeting(text)`                | 
+| `/email`      | `paragraph(text)`               | 
+| `/email`      | `buttonEscape(url)`             | 
+| `/email`      | `makeEmailSrc(url, width, height)`| returns publicly accessible url for image in S3 bucket
+
+Caveats:
+- makeEmailSrc uses s3 bucketname from `process.env.bucket` or `process.env.devBucket`
+
 
 ### Cognito functions
 | Module             |Function                       | Description
