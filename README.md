@@ -57,6 +57,9 @@ Some caveats on the specific dynamoDB functions:
 | `/ses`        | `ses.send(params)`                    | sends an email from ses using params - returns promise
 | `/ses`        | `ses.sendEmail(params)`               | sends an email from ses using `{toEmail, fromEmail, subject, data, textData}` - returns promise
 
+NB:
+- `toEmail` can be either a string or an array of strings (multiple recipients)
+
 Caveats:
 - s3 function uses s3 bucket specified in `process.env.photoBucket` or `process.env.devBucket`
 

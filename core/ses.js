@@ -4,9 +4,9 @@ const client = new AWS.SES;
 
 const sesMail = ({ toEmail, fromEmail, subject, data, textData }) => ({
     Destination: {
-        ToAddresses: [
-            toEmail,
-        ]
+        ToAddresses: (typeof toEmail === 'string') ?
+            [toEmail]
+            : toEmail,
     },
     Message: {
         Body: {
