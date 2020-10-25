@@ -38,6 +38,24 @@ vertical-align: top;
 border-collapse: collapse;
 }
 
+table.datatable {
+width: 100%;
+}
+
+.datatable td, .datatable th {
+border: 1px solid #dddddd;
+text-align: left;
+padding: 8px;
+}
+
+.datatable td.right, .datatable th.right {
+text-align: right;
+}
+
+.datatable tr:nth-child(even) {
+background-color: #dddddd;
+}
+
 * {
 line-height: inherit;
 }
