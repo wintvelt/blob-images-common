@@ -1,7 +1,6 @@
 import AWS from "aws-sdk";
 
-const inTestEnv = (process.env.NODE_ENV === 'test');
-if (inTestEnv) AWS.config.update({ region: 'eu-central-1' });
+AWS.config.update({ region: 'eu-central-1' });
 const client = new AWS.DynamoDB.DocumentClient();
 
 const MAX_TRANSACTWRITE = 10;
