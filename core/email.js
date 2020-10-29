@@ -340,17 +340,13 @@ style="border-top:0px solid transparent; border-left:0px solid transparent; bord
 style="color:#5c5762;font-family:Verdana, Geneva, sans-serif;line-height:1.2;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
 <div
 style="line-height: 1.2; font-size: 12px; color: #5c5762; font-family: Verdana, Geneva, sans-serif; mso-line-height-alt: 14px;">
-<p
-style="font-size: 14px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin: 0;">
-© clubalmanac 2020</p>
-<p style="font-size: 14px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin: 0;"></p>
 <p style="font-size: 14px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin: 0;">
-<a href="https://clubalmanac.com/about" rel="noopener"
-style="text-decoration: underline; color: #0097a7;"
-target="_blank">over ons</a> | <a
-href="https://clubalmanac.com/about#privacy" rel="noopener"
-style="text-decoration: underline; color: #0097a7;"
-target="_blank">privacy statement</a></p>
+© clubalmanac 2020<br/></p>
+<p style="font-size: 14px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin: 0;">
+<a href="https://clubalmanac.com/about" rel="noopener" style="text-decoration: underline; color: #0097a7;" target="_blank">over ons</a> | 
+<a href="https://clubalmanac.com/about#privacy" rel="noopener" style="text-decoration: underline; color: #0097a7;" target="_blank">privacy statement</a>
+<a href="https://clubalmanac.com/termsandconditions" rel="noopener" style="text-decoration: underline; color: #0097a7;" target="_blank">algemene voorwaarden</a>
+</p>
 </div>
 </div>
 <!--[if mso]></td></tr></table><![endif]-->
