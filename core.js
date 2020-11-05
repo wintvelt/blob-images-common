@@ -8,6 +8,7 @@ import {
 import {
     now as nowM,
     expireDate as expireDateM,
+    diffDate as diffDateM,
 } from './core/date';
 import {
     otob as otobM,
@@ -61,6 +62,7 @@ export const newGroupId = newGroupIdModule;
 export const newAlbumId = newAlbumIdModule;
 export const now = nowM;
 export const expireDate = expireDateM;
+export const diffDate = diffDateM;
 export const otob = otobM;
 export const btoa = btoaM;
 export const RND = RNDM;

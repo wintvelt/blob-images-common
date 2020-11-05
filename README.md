@@ -23,6 +23,7 @@ NB: the `sanitize` function is **not** included in the core, due to the relative
 | `/base64`     | `otob(object)`         | takes an object and coverts to base64 string
 | `/base64`     | `btoa(base64String)`   | inverse: takes a base64 string and returns an object
 | `/date`       | `now()`                | returns a string of the current date in format `yyyy-mm-dd`
+| `/date`       | `diffDate(dateStr, days)`  | takes a dateStr in standard format and difference, returns a dateStr in the standard format
 | `/date`       | `expireDate(dateStr)`  | takes a dateStr in standard format and returns a date 30 days later in the standard format
 | `/handler`    | `handler(lamdba)`      | wrapper function for event handler (to log errors)
 | `/handler`    | `getUserFromEvent(event)`| returns the userId (from AWS cognito user pool) of authenticated User

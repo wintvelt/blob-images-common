@@ -10,10 +10,14 @@ const makeStr = (date) => {
 
 export const now = () => makeStr(new Date());
 
+export const diffDate = (dateStr, diff) => {
+    let outDate = new Date(dateStr);
+    outDate.setDate(outDate.getDate() + diff);
+    return makeStr(outDate);
+}
+
 export const expireDate = (dateStr) => {
-    let expDate = new Date(dateStr);
-    expDate.setDate(expDate.getDate() + 30);
-    return makeStr(expDate);
+    return diffDate(dateStr, 30);
 };
 
 // base64 key for invites
