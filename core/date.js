@@ -1,5 +1,5 @@
 // date helpers
-const makeStr = (date) => {
+export const makeDateStr = (date) => {
     const yyyy = date.getFullYear();
     const m = date.getMonth() + 1;
     const mm = (m < 10) ? '0' + m : '' + m;
@@ -8,12 +8,12 @@ const makeStr = (date) => {
     return `${yyyy}-${mm}-${dd}`;
 };
 
-export const now = () => makeStr(new Date());
+export const now = () => makeDateStr(new Date());
 
 export const diffDate = (dateStr, diff) => {
     let outDate = new Date(dateStr);
     outDate.setDate(outDate.getDate() + diff);
-    return makeStr(outDate);
+    return makeDateStr(outDate);
 }
 
 export const expireDate = (dateStr) => {
