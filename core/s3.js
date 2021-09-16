@@ -13,5 +13,6 @@ export const s3 = {
     get: (params) => S3.getObject(params).promise(),
     list: (params) => S3.listObjectsV2(params).promise(),
     getMetadata: (params) => S3.headObject(params).promise(),
-    getSignedUrl: (params) => S3.getSignedUrl('putObject', params)
+    getSignedUrl: (params) => S3.getSignedUrl('putObject', params),
+    getSignedUrlGet: (params) => S3.getSignedUrl('getObject', params)
 };

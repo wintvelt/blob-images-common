@@ -54,7 +54,12 @@ Some caveats on the specific dynamoDB functions:
 ### S3 and SES functions
 | Module        |Function                               | Description
 |---------------|---------------------------------------|-------------------
-| `/s3`         | `s3.getMetadata(params)`              | returns a promise for an s3 function using the params. Also has a `delete` function
+| `/s3`         | `s3.getMetadata(params)`              | returns a promise for an s3 function using the params.
+| `/s3`         | `s3.delete(params)`                   | deletes stuff.
+| `/s3`         | `s3.get(params)`                      | gets an object.
+| `/s3`         | `s3.list(params)`                     | lists a bucket probably.
+| `/s3`         | `s3.getSignedUrl(params)`             | gets a signed url for ADDING a file to s3 (for uploads).
+| `/s3`         | `s3.getSignedUrlGet(params)`          | gets a signed url for READING a file from s3.
 | `/ses`        | `ses.send(params)`                    | sends an email from ses using params - returns promise
 | `/ses`        | `ses.sendEmail(params)`               | sends an email from ses using `{toEmail, fromEmail, subject, data, textData}` - returns promise
 
