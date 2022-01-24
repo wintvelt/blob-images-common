@@ -1,7 +1,7 @@
 {
   "name": "blob-common",
   "type": "module",
-  "version": "1.3.12",
+  "version": "1.3.13",
   "description": "Helper functions for blob-images API, useful in stack with serverless and AWS, but probably not generally useful",
   "main": "core.js",
   "scripts": {

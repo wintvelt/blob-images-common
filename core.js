@@ -1,45 +1,45 @@
-import { sleep as sleepModule } from './core/sleep';
-import { RND as RNDM } from './core/RND';
+import { sleep as sleepModule } from './core/sleep.js';
+import { RND as RNDM } from './core/RND.js';
 import {
     newPhotoId as newPhotoIdModule,
     newAlbumId as newAlbumIdModule,
     newGroupId as newGroupIdModule,
-} from './core/ids';
+} from './core/ids.js';
 import {
     now as nowM,
     expireDate as expireDateM,
     diffDate as diffDateM,
     makeDateStr as makeDateStrM,
-} from './core/date';
+} from './core/date.js';
 import {
     otob as otobM,
     btoa as btoaM,
-} from './core/base64';
+} from './core/base64.js';
 import {
     dynamoDb as dynamoDbM,
     dbUpdate as dbUpdateM,
     dbUpdateMulti as dbUpdateMultiM
-} from './core/db';
+} from './core/db.js';
 import {
     cleanRecord as cleanRecordM,
-} from './core/dbClean';
+} from './core/dbClean.js';
 import {
     dbItem as dbItemM,
     dbCreateItem as dbCreateItemM
-} from './core/dbCreate';
+} from './core/dbCreate.js';
 import {
     handler as handlerM,
     getUserFromEvent as getUserFromEventM,
-} from './core/handler';
+} from './core/handler.js';
 import {
     s3 as s3M,
-} from './core/s3';
+} from './core/s3.js';
 import {
     ses as sesM,
-} from './core/ses';
+} from './core/ses.js';
 import {
     cognito as cognitoM,
-} from './core/cognito';
+} from './core/cognito.js';
 import {
     makeEmailSrc as makeEmailSrcM,
     emailBody as emailBodyM,
@@ -55,7 +55,7 @@ import {
     headerRow as headerRowM,
     footerRow as footerRowM,
     photoRow as photoRowM
-} from './core/email';
+} from './core/email.js';
 
 export const sleep = sleepModule;
 export const newPhotoId = newPhotoIdModule;
