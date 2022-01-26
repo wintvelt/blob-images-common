@@ -23,7 +23,7 @@ export const handler = (lambda) => {
 }
 
 export const getUserFromEvent = (event) => {
-    const authProvider = event.requestContext.identity.cognitoAuthenticationProvider;
+    const authProvider = event.requestContext?.identity?.cognitoAuthenticationProvider;
     // if unAuth visit return empty
     if (!authProvider) return null;
 
@@ -39,3 +39,11 @@ export const getUserFromEvent = (event) => {
 
     return 'U' + userPoolUserId;
 };
+
+export const apiCall = async (promise) => {
+    try {
+        return [null, await promise]
+    } catch (error) {
+        return [error, null]
+    }
+}

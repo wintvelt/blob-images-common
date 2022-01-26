@@ -27,6 +27,7 @@ NB: the `sanitize` function is **not** included in the core, due to the relative
 | `/date`       | `expireDate(dateStr)`  | takes a dateStr in standard format and returns a date 30 days later in the standard format
 | `/handler`    | `handler(lamdba)`      | wrapper function for event handler (to log errors)
 | `/handler`    | `getUserFromEvent(event)`| returns the userId (from AWS cognito user pool) of authenticated User
+| `/handler`    | `apiCall(promise)`     | async wrapper for promise, returns the a tuple `[err, result]`
 | `/ids`        | `newPhotoId()`         | returns a newly generated photoId (starts with `P`)
 | `/ids`        | `newGroupId()`         | returns a newly generated groupId (starts with `G`)
 | `/ids`        | `newAlbumId()`         | returns a newly generated albumId (starts with `A`)

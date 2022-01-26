@@ -29,6 +29,7 @@ import {
 } from './core/dbCreate.js';
 import {
     handler as handlerM,
+    apiCall as apiCallM,
     getUserFromEvent as getUserFromEventM,
 } from './core/handler.js';
 import {
@@ -70,6 +71,7 @@ export const otob = otobM;
 export const btoa = btoaM;
 export const RND = RNDM;
 export const handler = handlerM;
+export const apiCall = apiCallM;
 export const getUserFromEvent = getUserFromEventM;
 
 export const dynamoDb = dynamoDbM;
