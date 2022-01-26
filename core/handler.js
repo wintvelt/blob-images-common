@@ -23,7 +23,13 @@ export const handler = (lambda) => {
 }
 
 export const getUserFromEvent = (event) => {
-    const authProvider = event.requestContext?.identity?.cognitoAuthenticationProvider;
+    const baseAuthProvider = event.requestContext.identity?.cognitoAuthenticationProvider;
+    // works differently for calls from node, maybe because http API works differently with sigv4Client
+    const altApiIdentityAmr = event.requestContext.authorizer?.iam?.cognitoIdentity?.amr;
+    const altAuthProvider = (altApiIdentityAmr && altApiIdentityAmr.length === 3 && altApiIdentityAmr[2]);
+
+    const authProvider = baseAuthProvider || altAuthProvider;
+
     // if unAuth visit return empty
     if (!authProvider) return null;
 
