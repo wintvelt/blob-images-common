@@ -1,6 +1,6 @@
 {
   "name": "blob-common",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "Helper functions for blob-images API, useful in stack with serverless and AWS, but probably not generally useful",
   "main": "core.js",
   "scripts": {
@@ -22,8 +22,8 @@
   },
   "homepage": "https://github.com/wintvelt/blob-images-common#readme",
   "dependencies": {
-    "aws-sdk": "^2.778.0",
-    "nanoid": "^3.1.12",
-    "sanitize-html": "^1.27.4"
+    "aws-sdk": "^2.1217.0",
+    "nanoid": "^3.3.4",
+    "sanitize-html": "^2.7.2"
   }
 }
