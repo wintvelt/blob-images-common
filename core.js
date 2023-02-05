@@ -36,6 +36,9 @@ import {
     s3 as s3M,
 } from './core/s3.js';
 import {
+    lambda as lambdaM,
+} from './core/lambda.js';
+import {
     ses as sesM,
 } from './core/ses.js';
 import {
@@ -82,6 +85,7 @@ export const dbItem = dbItemM;
 export const dbCreateItem = dbCreateItemM;
 
 export const s3 = s3M;
+export const lambda = lambdaM;
 export const ses = sesM;
 
 export const cognito = cognitoM;
@@ -92,7 +96,7 @@ export const row = rowM;
 export const textCell = textCellM;
 export const paragraph = paragraphM;
 export const greeting = greeteingM;
-export const buttonCell = buttonEscapeM;
+export const buttonEscape = buttonEscapeM;
 export const dividerCell = dividerCellM;
 export const buttonCell = buttonCellM;
 export const codeCell = codeCellM;
