@@ -126,15 +126,15 @@ max-height: none !important;
 }
 </style>
 </head>
-<body class="clean-body" style="margin: 0; padding: 0; -webkit-text-size-adjust: 100%; background-color: #d5c6c3;">
+<body class="clean-body" style="margin: 0; padding: 0; -webkit-text-size-adjust: 100%; background-color: #312e81;">
 <!--[if IE]><div class="ie-browser"><![endif]-->
-<table bgcolor="#d5c6c3" cellpadding="0" cellspacing="0" class="nl-container" role="presentation"
-style="table-layout: fixed; vertical-align: top; min-width: 320px; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #d5c6c3; width: 100%;"
+<table bgcolor="#312e81" cellpadding="0" cellspacing="0" class="nl-container" role="presentation"
+style="table-layout: fixed; vertical-align: top; min-width: 320px; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #312e81; width: 100%;"
 valign="top" width="100%">
 <tbody>
 <tr style="vertical-align: top;" valign="top">
 <td style="word-break: break-word; vertical-align: top;" valign="top">
-<!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color:#d5c6c3"><![endif]-->
+<!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color:#312e81"><![endif]-->
 `;
 
 const blockClose = `
@@ -235,9 +235,9 @@ title="Alternate text" width="67" />
 export const buttonCell = (text, url) => `
 <div align="center" class="button-container"
 style="padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
-<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"><tr><td style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="${url}" style="height:30pt; width:156pt; v-text-anchor:middle;" arcsize="10%" stroke="false" fillcolor="#fdec00"><w:anchorlock/><v:textbox inset="0,0,0,0"><center style="color:#000; font-family:Verdana, sans-serif; font-size:16px"><![endif]--><a
+<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"><tr><td style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="${url}" style="height:30pt; width:156pt; v-text-anchor:middle;" arcsize="10%" stroke="false" fillcolor="#f97316"><w:anchorlock/><v:textbox inset="0,0,0,0"><center style="color:#000; font-family:Verdana, sans-serif; font-size:16px"><![endif]--><a
 href="${url}"
-style="-webkit-text-size-adjust: none; text-decoration: none; display: inline-block; color: #000; background-color: #fdec00; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; width: auto; width: auto; border-top: 1px solid #fdec00; border-right: 1px solid #fdec00; border-bottom: 1px solid #fdec00; border-left: 1px solid #fdec00; padding-top: 04px; padding-bottom: 04px; font-family: Verdana, Geneva, sans-serif; text-align: center; mso-border-alt: none; word-break: keep-all;"
+style="-webkit-text-size-adjust: none; text-decoration: none; display: inline-block; color: #000; background-color: #f97316; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; width: auto; width: auto; border-top: 1px solid #f97316; border-right: 1px solid #f97316; border-bottom: 1px solid #f97316; border-left: 1px solid #f97316; padding-top: 04px; padding-bottom: 04px; font-family: Verdana, Geneva, sans-serif; text-align: center; mso-border-alt: none; word-break: keep-all;"
 target="_blank"><span
 style="padding-left:16px;padding-right:16px;font-size:16px;display:inline-block;"><span
 style="font-size: 16px; line-height: 2; word-break: break-word; mso-line-height-alt: 32px;">${text}</span></span></a>
@@ -248,7 +248,7 @@ style="font-size: 16px; line-height: 2; word-break: break-word; mso-line-height-
 export const codeCell = (code) => `
 <div align="center" class="button-container"
 style="padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
-<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"><tr><td style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:30pt; width:156pt; v-text-anchor:middle;" arcsize="10%" stroke="false" fillcolor="#fdec00"><w:anchorlock/><v:textbox inset="0,0,0,0"><center style="color:#000; font-family:Verdana, sans-serif; font-size:16px"><![endif]-->
+<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"><tr><td style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:30pt; width:156pt; v-text-anchor:middle;" arcsize="10%" stroke="false" fillcolor="#f97316"><w:anchorlock/><v:textbox inset="0,0,0,0"><center style="color:#000; font-family:Verdana, sans-serif; font-size:16px"><![endif]-->
 <div style="-webkit-text-size-adjust: none; text-decoration: none; display: inline-block; color: #000; background-color: tranparent; width: auto; width: auto; border-top: 2px solid #0097a7; border-bottom: 2px solid #0097a7; padding-top: 04px; padding-bottom: 04px; font-family: Verdana, Geneva, sans-serif; text-align: center; mso-border-alt: none; word-break: keep-all;"
 target="_blank"><span
 style="padding-left:16px;padding-right:16px;font-size:16px;display:inline-block;"><span
@@ -344,7 +344,7 @@ style="line-height: 1.2; font-size: 12px; color: #5c5762; font-family: Verdana, 
 © clubalmanac 2020<br/></p>
 <p style="font-size: 14px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin: 0;">
 <a href="https://clubalmanac.com/about" rel="noopener" style="text-decoration: underline; color: #0097a7;" target="_blank">over ons</a> | 
-<a href="https://clubalmanac.com/about#privacy" rel="noopener" style="text-decoration: underline; color: #0097a7;" target="_blank">privacy statement</a>
+<a href="https://clubalmanac.com/about#privacy" rel="noopener" style="text-decoration: underline; color: #0097a7;" target="_blank">privacy statement</a> | 
 <a href="https://clubalmanac.com/termsandconditions" rel="noopener" style="text-decoration: underline; color: #0097a7;" target="_blank">algemene voorwaarden</a>
 </p>
 </div>
