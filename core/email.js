@@ -249,7 +249,7 @@ export const codeCell = (code) => `
 <div align="center" class="button-container"
 style="padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"><tr><td style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:30pt; width:156pt; v-text-anchor:middle;" arcsize="10%" stroke="false" fillcolor="#f97316"><w:anchorlock/><v:textbox inset="0,0,0,0"><center style="color:#000; font-family:Verdana, sans-serif; font-size:16px"><![endif]-->
-<div style="-webkit-text-size-adjust: none; text-decoration: none; display: inline-block; color: #000; background-color: tranparent; width: auto; width: auto; border-top: 2px solid #0097a7; border-bottom: 2px solid #0097a7; padding-top: 04px; padding-bottom: 04px; font-family: Verdana, Geneva, sans-serif; text-align: center; mso-border-alt: none; word-break: keep-all;"
+<div style="-webkit-text-size-adjust: none; text-decoration: none; display: inline-block; color: #000; background-color: tranparent; width: auto; width: auto; border-top: 2px solid #6366f1; border-bottom: 2px solid #6366f1; padding-top: 04px; padding-bottom: 04px; font-family: Verdana, Geneva, sans-serif; text-align: center; mso-border-alt: none; word-break: keep-all;"
 target="_blank"><span
 style="padding-left:16px;padding-right:16px;font-size:16px;display:inline-block;"><span
 style="font-size: 16px; line-height: 2; word-break: break-word; mso-line-height-alt: 32px;">${code}</span></span></div>
@@ -263,7 +263,7 @@ export const buttonEscape = (url) => `
 <p style="font-size: 12px; line-height: 1.2; word-break: break-word; mso-line-height-alt: 14px; margin: 0;">
 <span style="font-size: 12px;">Als dit niet werkt, kopieer dan onderstaande link naar je browser</span></p>
 <a href="${url}" rel="noopener"
-style="text-decoration: underline; color: #0097a7;"
+style="text-decoration: underline; color: #6366f1;"
 target="_blank">${url}</a>
 </div>
 `;
@@ -338,13 +338,13 @@ style="border-top:0px solid transparent; border-left:0px solid transparent; bord
 <div
 style="color:#5c5762;font-family:Verdana, Geneva, sans-serif;line-height:1.2;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
 <div
-style="line-height: 1.2; font-size: 12px; color: #5c5762; font-family: Verdana, Geneva, sans-serif; mso-line-height-alt: 14px;">
+style="line-height: 1.2; font-size: 12px; color: #ffffff; font-family: Verdana, Geneva, sans-serif; mso-line-height-alt: 14px;">
 <p style="font-size: 14px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin: 0;">
 © clubalmanac 2020<br/></p>
 <p style="font-size: 14px; line-height: 1.2; word-break: break-word; text-align: center; mso-line-height-alt: 17px; margin: 0;">
-<a href="https://clubalmanac.com/about" rel="noopener" style="text-decoration: underline; color: #0097a7;" target="_blank">over ons</a> | 
-<a href="https://clubalmanac.com/about#privacy" rel="noopener" style="text-decoration: underline; color: #0097a7;" target="_blank">privacy statement</a> | 
-<a href="https://clubalmanac.com/termsandconditions" rel="noopener" style="text-decoration: underline; color: #0097a7;" target="_blank">algemene voorwaarden</a>
+<a href="https://clubalmanac.com/about" rel="noopener" style="text-decoration: underline; color: #6366f1;" target="_blank">over ons</a> | 
+<a href="https://clubalmanac.com/about#privacy" rel="noopener" style="text-decoration: underline; color: #6366f1;" target="_blank">privacy statement</a> | 
+<a href="https://clubalmanac.com/termsandconditions" rel="noopener" style="text-decoration: underline; color: #6366f1;" target="_blank">algemene voorwaarden</a>
 </p>
 </div>
 </div>
