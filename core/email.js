@@ -261,8 +261,7 @@ style="font-size: 16px; line-height: 2; word-break: break-word; mso-line-height-
 export const buttonEscape = (url) => `
 <div style="line-height: 1.2; font-size: 12px; color: #5c5762; font-family: Verdana, Geneva, sans-serif; mso-line-height-alt: 14px;">
 <p style="font-size: 12px; line-height: 1.2; word-break: break-word; mso-line-height-alt: 14px; margin: 0;">
-<span style="font-size: 12px;">Als dit niet werkt, probeer
-dan onderstaande link te kopiëren naar je browser</span></p>
+<span style="font-size: 12px;">Als dit niet werkt, kopieer dan onderstaande link naar je browser</span></p>
 <a href="${url}" rel="noopener"
 style="text-decoration: underline; color: #0097a7;"
 target="_blank">${url}</a>
