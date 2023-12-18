@@ -11,37 +11,42 @@ const s3Client = new S3Client({
     signatureVersion: 'v4'
 });
 
+const withBucket = (params) => ({
+    Bucket: process.env.photoBucket || process.env.devBucket || 'blob-images-dev',
+    ...params
+});
+
 export const s3 = {
     delete: (params) => {
-        const command = new DeleteObjectCommand(params);
+        const command = new DeleteObjectCommand(withBucket(params));
         return s3Client.send(command);
     },
     get: (params) => {
-        const command = new GetObjectCommand(params);
+        const command = new GetObjectCommand(withBucket(params));
         return s3Client.send(command);
     },
     put: (params) => {
-        const command = new PutObjectCommand(params);
+        const command = new PutObjectCommand(withBucket(params));
         return s3Client.send(command);
     },
     list: (params) => {
-        const command = new ListObjectsV2Command(params);
+        const command = new ListObjectsV2Command(withBucket(params));
         return s3Client.send(command);
     },
     copyObject: (params) => {
-        const command = new CopyObjectCommand(params);
+        const command = new CopyObjectCommand(withBucket(params));
         return s3Client.send(command);
     },
     getMetadata: (params) => {
-        const command = new HeadObjectCommand(params);
+        const command = new HeadObjectCommand(withBucket(params));
         return s3Client.send(command);
     },
     getSignedUrl: (params) => {
-        const command = new PutObjectCommand(params);
+        const command = new PutObjectCommand(withBucket(params));
         return getSignedUrl(s3Client, command);
     },
     getSignedUrlGet: (params) => {
-        const command = new GetObjectCommand(params);
+        const command = new GetObjectCommand(withBucket(params));
         return getSignedUrl(s3Client, command);
     }
 };
