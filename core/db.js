@@ -1,10 +1,10 @@
 import {
     DynamoDBClient
 } from "@aws-sdk/client-dynamodb"; // ES Modules import
-import { DynamoDBDocumentClient, TransactWriteCommand } from "@aws-sdk/lib-dynamodb"; // ES6 import
+import { DynamoDBDocument } from "@aws-sdk/lib-dynamodb"; // ES6 import
 
 const client = new DynamoDBClient({ region: 'eu-central-1' });
-const dbClient = DynamoDBDocumentClient.from(client);
+const dbClient = DynamoDBDocument.from(client);
 
 const MAX_TRANSACTWRITE = 10;
 const withTable = (params) => ({
@@ -37,8 +37,7 @@ const splitTransact = (params) => {
             const bundledParams = {
                 TransactItems: transactionSet.map(item => addTable(item))
             };
-            const command = new TransactWriteCommand(bundledParams);
-            return dbClient.send(command);
+            return dbClient.transactWrite(bundledParams);
         })
     );
 };
