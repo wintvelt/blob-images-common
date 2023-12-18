@@ -48,7 +48,7 @@ const splitTransact = (params) => {
 export const dynamoDb = {
     get: (params) => {
         console.log('try to get DB record');
-        console.log(params);
+        console.log(withTable(params));
         const command = new GetItemCommand(withTable(params));
         return dbClient.send(command);
     },
