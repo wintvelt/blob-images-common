@@ -1,9 +1,7 @@
 import {
-    DynamoDBClient,
-    DeleteItemCommand, GetItemCommand, PutItemCommand, QueryCommand, UpdateItemCommand,
-    TransactWriteItemsCommand
+    DynamoDBClient
 } from "@aws-sdk/client-dynamodb"; // ES Modules import
-import { DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb"; // ES6 import
+import { DynamoDBDocumentClient, TransactWriteCommand } from "@aws-sdk/lib-dynamodb"; // ES6 import
 
 const client = new DynamoDBClient({ region: 'eu-central-1' });
 const dbClient = DynamoDBDocumentClient.from(client);
@@ -39,35 +37,18 @@ const splitTransact = (params) => {
             const bundledParams = {
                 TransactItems: transactionSet.map(item => addTable(item))
             };
-            const command = new TransactWriteItemsCommand(bundledParams);
+            const command = new TransactWriteCommand(bundledParams);
             return dbClient.send(command);
         })
     );
 };
 
 export const dynamoDb = {
-    get: (params) => {
-        console.log('try to get DB record');
-        console.log(withTable(params));
-        const command = new GetItemCommand(withTable(params));
-        return dbClient.send(command);
-    },
-    put: (params) => {
-        const command = new PutItemCommand(withTable(params));
-        return dbClient.send(command);
-    },
-    query: (params) => {
-        const command = new QueryCommand(withTable(params));
-        return dbClient.send(command);
-    },
-    update: (params) => {
-        const command = new UpdateItemCommand(withTable(params));
-        return dbClient.send(command);
-    },
-    delete: (params) => {
-        const command = new DeleteItemCommand(withTable(params));
-        return dbClient.send(command);
-    },
+    get: (params) => (dbClient.get(withTable(params))),
+    put: (params) => (dbClient.put(withTable(params))),
+    query: (params) => (dbClient.query(withTable(params))),
+    update: (params) => (dbClient.update(withTable(params))),
+    delete: (params) => (dbClient.delete(withTable(params))),
     transact: (params) => splitTransact(params),
 };
 
