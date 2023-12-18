@@ -3,8 +3,10 @@ import {
     DeleteItemCommand, GetItemCommand, PutItemCommand, QueryCommand, UpdateItemCommand,
     TransactWriteItemsCommand
 } from "@aws-sdk/client-dynamodb"; // ES Modules import
+import { DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb"; // ES6 import
 
 const client = new DynamoDBClient({ region: 'eu-central-1' });
+const dbClient = DynamoDBDocumentClient.from(client);
 
 const MAX_TRANSACTWRITE = 10;
 const withTable = (params) => ({
@@ -38,31 +40,33 @@ const splitTransact = (params) => {
                 TransactItems: transactionSet.map(item => addTable(item))
             };
             const command = new TransactWriteItemsCommand(bundledParams);
-            return client.send(command);
+            return dbClient.send(command);
         })
     );
 };
 
 export const dynamoDb = {
     get: (params) => {
+        console.log('try to get DB record');
+        console.log(params);
         const command = new GetItemCommand(withTable(params));
-        return client.send(command);
+        return dbClient.send(command);
     },
     put: (params) => {
         const command = new PutItemCommand(withTable(params));
-        return client.send(command);
+        return dbClient.send(command);
     },
     query: (params) => {
         const command = new QueryCommand(withTable(params));
-        return client.send(command);
+        return dbClient.send(command);
     },
     update: (params) => {
         const command = new UpdateItemCommand(withTable(params));
-        return client.send(command);
+        return dbClient.send(command);
     },
     delete: (params) => {
         const command = new DeleteItemCommand(withTable(params));
-        return client.send(command);
+        return dbClient.send(command);
     },
     transact: (params) => splitTransact(params),
 };

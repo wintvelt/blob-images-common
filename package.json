@@ -1,6 +1,6 @@
 {
   "name": "blob-common",
-  "version": "2.0.2",
+  "version": "2.0.4",
   "description": "Helper functions for blob-images API, useful in stack with serverless and AWS ** from v2.0.0 for SDK V3 **, but probably not generally useful.",
   "main": "core.js",
   "scripts": {
@@ -27,6 +27,7 @@
     "@aws-sdk/client-lambda": "^3.474.0",
     "@aws-sdk/client-s3": "^3.474.0",
     "@aws-sdk/client-ses": "^3.474.0",
+    "@aws-sdk/lib-dynamodb": "^3.474.0",
     "@aws-sdk/s3-request-presigner": "^3.474.0",
     "nanoid": "^5.0.4",
     "sanitize-html": "^2.11.0"
