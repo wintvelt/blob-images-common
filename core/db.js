@@ -37,7 +37,7 @@ const splitTransact = (params) => {
             const bundledParams = {
                 TransactItems: transactionSet.map(item => addTable(item))
             };
-            const command = TransactWriteItemsCommand(bundledParams);
+            const command = new TransactWriteItemsCommand(bundledParams);
             return client.send(command);
         })
     );
@@ -45,23 +45,23 @@ const splitTransact = (params) => {
 
 export const dynamoDb = {
     get: (params) => {
-        const command = GetItemCommand(withTable(params));
+        const command = new GetItemCommand(withTable(params));
         return client.send(command);
     },
     put: (params) => {
-        const command = PutItemCommand(withTable(params));
+        const command = new PutItemCommand(withTable(params));
         return client.send(command);
     },
     query: (params) => {
-        const command = QueryCommand(withTable(params));
+        const command = new QueryCommand(withTable(params));
         return client.send(command);
     },
     update: (params) => {
-        const command = UpdateItemCommand(withTable(params));
+        const command = new UpdateItemCommand(withTable(params));
         return client.send(command);
     },
     delete: (params) => {
-        const command = DeleteItemCommand(withTable(params));
+        const command = new DeleteItemCommand(withTable(params));
         return client.send(command);
     },
     transact: (params) => splitTransact(params),

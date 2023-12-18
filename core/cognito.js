@@ -11,18 +11,13 @@ const params = (userId) => ({
     Username: userId.slice(1)
 });
 
-const command = new AdminDisableUserCommand(input);
-const response = await client.send(command);
-// {};
-
-
 export const cognito = {
     disableUser: (userId) => {
-        const command = AdminDisableUserCommand(params(userId));
+        const command = new AdminDisableUserCommand(params(userId));
         return cognitoClient.send(command)
     },
     deleteUser: (userId) => {
-        const command = AdminDeleteUserCommand(params(userId));
+        const command = new AdminDeleteUserCommand(params(userId));
         return cognitoClient.send(command)
     }
 };
