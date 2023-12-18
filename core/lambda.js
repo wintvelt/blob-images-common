@@ -1,7 +1,10 @@
-import AWS from "aws-sdk";
+import { LambdaClient, InvokeCommand } from "@aws-sdk/client-lambda"; // ES Modules import
 
-var Lambda = new AWS.Lambda();
+const lambdaClient = new LambdaClient();
 
 export const lambda = {
-    invoke: (params) => Lambda.invoke(params).promise()
+    invoke: (params) => {
+        const command = new InvokeCommand(params);
+        return lambdaClient(command);
+    }
 };

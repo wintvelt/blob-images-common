@@ -1,6 +1,6 @@
-import AWS from "aws-sdk";
+import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses"; // ES Modules import
 
-const client = new AWS.SES;
+const client = new SESClient(config);
 
 const sesMail = ({ toEmail, fromEmail, subject, data, textData }) => ({
     Destination: {
@@ -31,6 +31,12 @@ const sesMail = ({ toEmail, fromEmail, subject, data, textData }) => ({
 });
 
 export const ses = {
-    send: (params) => client.sendEmail(params).promise(),
-    sendEmail: (params) => client.sendEmail(sesMail(params)).promise(),
+    send: (params) => {
+        const command = new SendEmailCommand(params);
+        return client.send(command);
+    },
+    sendEmail: (params) => {
+        const command = new SendEmailCommand(sesMail(params));
+        return client.send(command);
+    }
 };

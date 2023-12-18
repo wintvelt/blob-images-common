@@ -1,7 +1,7 @@
 {
   "name": "blob-common",
-  "version": "1.4.11",
-  "description": "Helper functions for blob-images API, useful in stack with serverless and AWS, but probably not generally useful",
+  "version": "2.0.1",
+  "description": "Helper functions for blob-images API, useful in stack with serverless and AWS ** from v2.0.0 for SDK V3 **, but probably not generally useful.",
   "main": "core.js",
   "scripts": {
     "test": "echo \\\"Error: no test specified\\\" && exit 1"
@@ -22,8 +22,13 @@
   },
   "homepage": "https://github.com/wintvelt/blob-images-common#readme",
   "dependencies": {
-    "aws-sdk": "^2.1309.0",
-    "nanoid": "^4.0.1",
-    "sanitize-html": "^2.9.0"
+    "@aws-sdk/client-cognito-identity-provider": "^3.474.0",
+    "@aws-sdk/client-dynamodb": "^3.474.0",
+    "@aws-sdk/client-lambda": "^3.474.0",
+    "@aws-sdk/client-s3": "^3.474.0",
+    "@aws-sdk/client-ses": "^3.474.0",
+    "@aws-sdk/s3-request-presigner": "^3.474.0",
+    "nanoid": "^5.0.4",
+    "sanitize-html": "^2.11.0"
   }
 }
